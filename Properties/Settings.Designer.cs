@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace neutrino_astronomy.Properties
+namespace Astronomical_Processing_Sprint1.Properties
 {
 
 
