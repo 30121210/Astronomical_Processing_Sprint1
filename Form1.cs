@@ -154,7 +154,7 @@ namespace neutrino_astronomy
 
 
 
-        private void button2_Click(object sender, EventArgs e)
+        private void button_Search_Click(object sender, EventArgs e)
         {
             if (!isLoaded)
             {
@@ -188,7 +188,7 @@ namespace neutrino_astronomy
                 {
                     //Select the index found in the list
 
-                    listBox1.SelectedIndex = mid;
+                    
                     MessageBox.Show($"Search successful.Found at index {mid} with the value {dates[mid]}");
                     
                     return;
@@ -226,7 +226,7 @@ namespace neutrino_astronomy
 
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void button_Edit_Click(object sender, EventArgs e)
         {
             if (!isLoaded)
             {
