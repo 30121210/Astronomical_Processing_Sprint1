@@ -273,7 +273,7 @@ namespace Astronomical_Processing_Sprint1
             }int mid = (min + max) / 2;
 
 
-            MessageBox.Show($"Mid-Extreme value: {mid}");
+            textBoxMid_extrem.Text = mid.ToString();
         }
 
         private void buttonMode_Click(object sender, EventArgs e)
@@ -282,6 +282,8 @@ namespace Astronomical_Processing_Sprint1
             if (!isLoaded)
             {
                 MessageBox.Show("First load dates");
+                textBoxMode.Clear();
+                textBoxFrecuency.Clear();
                 return;
             }
             //Counting frequencies with a fixed arrangement 
@@ -293,6 +295,8 @@ namespace Astronomical_Processing_Sprint1
                 if (v < 10 && v > 91)
                 {
                     MessageBox.Show($"Value{v} out of range");
+                    textBoxMode.Clear();
+                    textBoxFrecuency.Clear();
                     return;
                 }
                 frequency[v-10]++;
@@ -308,44 +312,23 @@ namespace Astronomical_Processing_Sprint1
             //Specials cases
             if (maxFreq <= 1)
             {
-                MessageBox.Show("No mode found.All values appear only once");
+                textBoxMode.Text = "No Mode";
+                textBoxFrecuency.Text = "1";
                 return;
             }
-            // Check if there is only one fashion
-            int mode = -1;
-            int modeCount = 0;
-            for (int i = 0; i < frequency.Length; i++)
+            int modeValue = -1;
+            for (int i=0;i<frequency.Length;i++)
             {
-                if (frequency[i] == maxFreq)
+                if (frequency[i]==maxFreq)
                 {
-
-                    modeCount++;
-                    mode = i + 10;
-                    if (modeCount > 1)
-                    {
-                        MessageBox.Show("No unique mode found");
-                        break;
-                    }
+                    modeValue = i + 10;
+                    break;
                 }
             }
-            if (modeCount == 1)
-            {
-                MessageBox.Show($"Mode found: {mode} appearing {maxFreq} times");
-                return;
 
-            }
-
-            listBox1.ClearSelected();
-            for (int i = 0; i < dates.Length; i++)
-            {
-                if (dates[i] == mode)
-                {
-                    listBox1.SetSelected(i, true);
-                    MessageBox.Show($"Mode found: {mode} appearing {maxFreq} times");
-
-                }
-
-            }
+            //Show results
+            textBoxMode.Text = modeValue.ToString();
+            textBoxFrecuency.Text = maxFreq.ToString();
         }
 
         private void buttonAverage_Click(object sender, EventArgs e)
@@ -363,7 +346,7 @@ namespace Astronomical_Processing_Sprint1
             }
             //Calculate average
             double average = (double)sum / dates.Length;
-            MessageBox.Show($"Average: {average:F2}");
+            textBoxAverage.Text = average.ToString("F2");
         }
 
         private void buttonRange_Click(object sender, EventArgs e)
@@ -387,7 +370,7 @@ namespace Astronomical_Processing_Sprint1
             }
             //Calculate range
             int range = max - min;
-            MessageBox.Show($"Range: {range}");
+            textBoxRange.Text = range.ToString();
 
         }
 

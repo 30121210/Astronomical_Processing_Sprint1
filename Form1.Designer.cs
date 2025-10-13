@@ -236,7 +236,7 @@
             // 
             // textBoxFrecuency
             // 
-            this.textBoxFrecuency.Location = new System.Drawing.Point(392, 294);
+            this.textBoxFrecuency.Location = new System.Drawing.Point(401, 244);
             this.textBoxFrecuency.Name = "textBoxFrecuency";
             this.textBoxFrecuency.Size = new System.Drawing.Size(100, 20);
             this.textBoxFrecuency.TabIndex = 23;
@@ -245,7 +245,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Comic Sans MS", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(325, 295);
+            this.label1.Location = new System.Drawing.Point(321, 244);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(61, 16);
             this.label1.TabIndex = 24;
