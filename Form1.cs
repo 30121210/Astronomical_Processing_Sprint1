@@ -62,10 +62,7 @@ namespace Astronomical_Processing_Sprint1
             InitializeComponent();
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
+        
 
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -207,20 +204,6 @@ namespace Astronomical_Processing_Sprint1
 
 
 
-
-
-            
-            
-               
-
-        
-
-        private void textBoxEdite_TextChanged(object sender, EventArgs e)
-        {
-            
-
-        }
-
         private void button_Edit_Click(object sender, EventArgs e)
         {
             if (!isLoaded)
@@ -316,18 +299,19 @@ namespace Astronomical_Processing_Sprint1
                 textBoxFrecuency.Text = "1";
                 return;
             }
-            int modeValue = -1;
-            for (int i=0;i<frequency.Length;i++)
+            // Show all modes
+
+            List<int> modes = new List<int>();
+            for (int i = 0; i < frequency.Length; i++)
             {
-                if (frequency[i]==maxFreq)
+                if (frequency[i] == maxFreq)
                 {
-                    modeValue = i + 10;
-                    break;
+                    modes.Add(i + 10); // Adjust index to value
                 }
             }
 
             //Show results
-            textBoxMode.Text = modeValue.ToString();
+            textBoxMode.Text = string.Join(", ", modes);
             textBoxFrecuency.Text = maxFreq.ToString();
         }
 
@@ -400,10 +384,15 @@ namespace Astronomical_Processing_Sprint1
 
             for (int i=0;i<dates.Length;i++)
             {
-                found = true;
-                foundIndex = i;
-                //He stops whehn he finds the target
-                break;
+                if(dates[i] == target)
+
+                {
+                    found = true;
+                    foundIndex = i;
+                    //He stops whehn he finds the target
+                    break;
+                }
+                   
             }
             //Show results
             if (found)
@@ -419,14 +408,6 @@ namespace Astronomical_Processing_Sprint1
            
         }
 
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
+       
     }
 }
